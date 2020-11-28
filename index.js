@@ -8,7 +8,7 @@ function insertionSort2(arr) {
             arr[j + 1] = arr[j]
             j--
         }
-        //increements j because it's value was less becuase of while loop j--
+        //increements j because the value we need here is j + 1
         j++
         arr[j] = temp
     }

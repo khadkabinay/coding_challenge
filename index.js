@@ -16,3 +16,22 @@ return arr
 }
 
 insertionSort2([1,3,10, 35, 56, 78])
+
+
+// FIBONACCI SEQUENCE
+function fib(n , prevVal = []){
+    if(prevVal[n] != null){
+        return prevVal[n]
+    }
+    let result 
+    if(n <= 2){
+        result = 1
+    }else{
+        result = fib(n - 1, prevVal)  + fib(n - 2, prevVal)
+    }
+    prevVal[n] = result
+    return result 
+}
+
+
+console.log(fib(6))

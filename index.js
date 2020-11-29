@@ -38,6 +38,7 @@ function fib(n , prevVal = []){
 
 
 // IMPLEMENTATION 
+// grading
 // If the difference between the grade and the next multiple of 5 is less than 3, round  up to the next multiple of 5 .
 //If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade.
 // return array of new value 
@@ -53,4 +54,9 @@ function gradingStudents(grades) {
 
 }
 
-console.log(gradingStudents([73, 67, 38, 33]))
+// console.log(gradingStudents([73, 67, 38, 33]))
+
+
+
+
+

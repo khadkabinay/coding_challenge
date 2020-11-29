@@ -15,7 +15,7 @@ function insertionSort2(arr) {
 return arr
 }
 
-insertionSort2([1,3,10, 35, 56, 78])
+// insertionSort2([1,3,10, 35, 56, 78])
 
 
 // FIBONACCI SEQUENCE
@@ -34,4 +34,23 @@ function fib(n , prevVal = []){
 }
 
 
-console.log(fib(6))
+// console.log(fib(6))
+
+
+// IMPLEMENTATION 
+// If the difference between the grade and the next multiple of 5 is less than 3, round  up to the next multiple of 5 .
+//If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade.
+// return array of new value 
+function gradingStudents(grades) {
+    return grades.map( grade => {
+        let numDiff = 5 - ( grade % 5);
+        if(numDiff < 3 && grade >= 38) {
+            grade += numDiff;
+        }
+        
+        return grade;
+    })
+
+}
+
+console.log(gradingStudents([73, 67, 38, 33]))

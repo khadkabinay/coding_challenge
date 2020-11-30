@@ -57,6 +57,36 @@ function gradingStudents(grades) {
 // console.log(gradingStudents([73, 67, 38, 33]))
 
 
+//  SUPPER REDUCED STRING
+// reduce the string to it shortest length by doing a series of operations
+// a pair of adjacent that matched will be deleted
+// if all adjacent are matched ,print empty string
+
+function superReducedString(s) {
+    let arr = s.split('')
+    for(let i = 0; i < arr.length - 1;){
+        if(arr[i] === arr[i + 1]){
+            arr.splice(i, 2)
+            i = 0  
+        }else{
+            i++
+        }
+    }
+
+    if(!arr.join("")){
+        return 'Empty String'
+    }else{
+        return arr.join('')
+    }
+    
+    
+
+
+}
+
+superReducedString('aabbc')
+
+
 
 
 

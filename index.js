@@ -38,7 +38,7 @@ function fib(n , prevVal = []){
 
 
 // IMPLEMENTATION 
-// grading
+// 1.  grading
 // If the difference between the grade and the next multiple of 5 is less than 3, round  up to the next multiple of 5 .
 //If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade.
 // return array of new value 
@@ -55,6 +55,25 @@ function gradingStudents(grades) {
 }
 
 // console.log(gradingStudents([73, 67, 38, 33]))
+
+//2. Number Line Jumps
+// two kangoroos on a number in the positive direction 
+// start line or jump distance might be different
+// kangoroos1 has a start line x1 = 1 , jump distance v1= 2 and kangoroos2 has x2 = 2 and jump distance  v1 = 1 ,print "Yes"
+// if they never meet at the same location at the same , print "No"
+
+function kangaroo(x1, v1, x2, v2) {
+
+   
+}
+
+
+
+
+
+kangaroo(3, 2 ,1, 4)
+
+
 
 
 //  SUPPER REDUCED STRING
@@ -87,6 +106,7 @@ function superReducedString(s) {
 superReducedString('aabbc')
 
 
+// 
 
 
 

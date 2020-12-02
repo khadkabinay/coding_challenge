@@ -106,7 +106,25 @@ function superReducedString(s) {
 superReducedString('aabbc')
 
 
-// 
+
+// SEARCH ALGORITHMS
+
+// 1. Ice Cream Parlor
+// Sunny and johnny like to pool their money and go to the ice cream parlor
+// Johnny never buys the same flavor
+// they spend all of their moneny 
+// given a list of flavor's cost ,find two costs that spends all of their total money.
+// return indices but start from 1
+
+
+//iterate through outter loop starting from 0
+//itrerate inner loop starting from 1 
+// check each number if two numbers added make total of their money . 
+// push each indices by increementing by 1 . 
+// return arr 
+
+
+
 
 
 

@@ -1,5 +1,4 @@
 // INSERTION SORT PART2
-
 function insertionSort2(arr) {
     for(let i = 1; i < arr.length; i++){
         let temp = arr[i]
@@ -33,7 +32,6 @@ function fib(n , prevVal = []){
     return result 
 }
 
-
 // console.log(fib(6))
 
 
@@ -62,7 +60,6 @@ function gradingStudents(grades) {
 // start line or jump distance might be different
 // kangoroos1 has a start line x1 = 1 , jump distance v1= 2 and kangoroos2 has x2 = 2 and jump distance  v1 = 1 ,print "Yes"
 // if they never meet at the same location(same number) , print "No"
-
 function kangaroo(x1, v1, x2, v2) {
     if(x1 < x2 && v1 < v2){
         return "No"
@@ -76,11 +73,7 @@ function kangaroo(x1, v1, x2, v2) {
 
 }
 
-
 console.log(kangaroo(2, 1, 3,4))
-
-
-
 
 //  SUPPER REDUCED STRING
 // reduce the string to it shortest length by doing a series of operations
@@ -111,10 +104,7 @@ function superReducedString(s) {
 
 superReducedString('aabbc')
 
-
-
 // SEARCH ALGORITHMS
-
 // 1. Ice Cream Parlor
 // Sunny and johnny like to pool their money and go to the ice cream parlor
 // Johnny never buys the same flavor

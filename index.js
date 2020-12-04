@@ -121,6 +121,28 @@ superReducedString('aabbc')
 
 
 
+//2. palindrome 
+// check if number is less than 0
+// convert number to string and to array for reverse method 
+// after reverse join and converts that to number 
+// check if  reversed number and number is same 
+// return true if they match otherwise return false 
+
+
+const  isPalindrome = function(x) {
+    if(x < 0){
+        return false
+    }else{
+        let reverseInput = Number(x.toString().split("").reverse().join(""))
+        if(x === reverseInput){
+            return true
+        }else{
+            return false
+        }
+    }
+}
+
+
 
 
 

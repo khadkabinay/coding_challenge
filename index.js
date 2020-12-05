@@ -142,6 +142,47 @@ const  isPalindrome = function(x) {
     }
 }
 
+isPalindrome(121)
+
+
+
+
+//// VALID PARENTHESIS
+// create an empty array 
+// create an two object to seperate opening and closing brackets, parenthesis,curly bracket
+// check if opening value is exist 
+// compare closing value is matched to opening one .If not, return false
+// if array is empty after compared , then return true , otherwise , return false . 
+
+
+const isValid = function(s) {
+    let stack = []
+    let leftMap = {
+        "(" : 1,
+        "{" : 2,
+        "[" : 3
+    }
+    
+    let rightMap = {
+        ")" : 1,
+        "}" : 2,
+        "]" : 3
+    }
+    for(let i = 0; i < s.length; i++){
+    if(leftMap[s[i]]){
+        stack.push(s[i])
+    }else{
+    if(rightMap[s[i]] !== leftMap[stack.pop(s[i])]){
+        return false
+    }
+    }
+    }
+    return stack.length ? false: true;
+
+};
+
+console.log(isValid("()[]{}"))
+
 
 
 

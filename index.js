@@ -142,7 +142,84 @@ const  isPalindrome = function(x) {
     }
 }
 
+isPalindrome(121)
 
 
 
 
+//// VALID PARENTHESIS
+// create an empty array 
+// create an two object to seperate opening and closing brackets, parenthesis,curly bracket
+// check if opening value is exist 
+// compare closing value is matched to opening one .If not, return false
+// if array is empty after compared , then return true , otherwise , return false . 
+
+
+const isValid = function(s) {
+    let stack = []
+    let leftMap = {
+        "(" : 1,
+        "{" : 2,
+        "[" : 3
+    }
+    
+    let rightMap = {
+        ")" : 1,
+        "}" : 2,
+        "]" : 3
+    }
+    for(let i = 0; i < s.length; i++){
+    if(leftMap[s[i]]){
+        stack.push(s[i])
+    }else{
+    if(rightMap[s[i]] !== leftMap[stack.pop(s[i])]){
+        return false
+    }
+    }
+    }
+    return stack.length ? false: true;
+
+};
+
+console.log(isValid("()[]{}"))
+
+
+
+//DIVIDE AND CONQUER PATTERN EXAMPLE 
+// find the position of a number in given array . 
+// take two parameters a number  and an array 
+// return index of the number
+
+
+//define a function that takes two parameters (number, array)
+//define two variables to keep track of start and end value
+//store length of array in a variable and middle value as well
+//use while loop to iterate through array until its start value is not greater than end value
+//check if number is less than middle value ,if Yes, assign end value as middle - 1 
+//check if number value is greater than middle value ,if it is , then assign start value middle + 1
+//if condition does not fall into previous if checks then , return middle value
+//if none of conditions are met , just return - 1 
+
+
+
+
+const findPosition = (arr, num) => {
+    let start = 0; 
+    let end = arr.length - 1 
+    while(start <= end){
+        let middle = Math.floor((start + end ) / 2)
+        let currentMidVal = arr[middle]
+        if(num < currentMidVal){
+            end  = middle - 1
+        }else if ( num > currentMidVal){
+            start = middle + 1
+        }else{
+          // depends on whether we want to return value or index . 
+          // return arr[middle]
+            return middle
+        }
+}
+    return -1 
+}
+
+findPosition([1,2,3,4,5], 3)

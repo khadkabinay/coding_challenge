@@ -185,5 +185,41 @@ console.log(isValid("()[]{}"))
 
 
 
+//DIVIDE AND CONQUER PATTERN EXAMPLE 
+// find the position of a number in given array . 
+// take two parameters a number  and an array 
+// return index of the number
 
 
+//define a function that takes two parameters (number, array)
+//define two variables to keep track of start and end value
+//store length of array in a variable and middle value as well
+//use while loop to iterate through array until its start value is not greater than end value
+//check if number is less than middle value ,if Yes, assign end value as middle - 1 
+//check if number value is greater than middle value ,if it is , then assign start value middle + 1
+//if condition does not fall into previous if checks then , return middle value
+//if none of conditions are met , just return - 1 
+
+
+
+
+const findPosition = (arr, num) => {
+    let start = 0; 
+    let end = arr.length - 1 
+    while(start <= end){
+        let middle = Math.floor((start + end ) / 2)
+        let currentMidVal = arr[middle]
+        if(num < currentMidVal){
+            end  = middle - 1
+        }else if ( num > currentMidVal){
+            start = middle + 1
+        }else{
+          // depends on whether we want to return value or index . 
+          // return arr[middle]
+            return middle
+        }
+}
+    return -1 
+}
+
+findPosition([1,2,3,4,5], 3)

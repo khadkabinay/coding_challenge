@@ -223,3 +223,9 @@ const findPosition = (arr, num) => {
 }
 
 findPosition([1,2,3,4,5], 3)
+
+
+// Given two binary trees, write a function to check if they are the same or not.
+// Two binary trees are considered the same if they are structurally identical and the nodes have the same value
+
+

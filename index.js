@@ -222,10 +222,19 @@ const findPosition = (arr, num) => {
     return -1 
 }
 
+
 findPosition([1,2,3,4,5], 3)
 
 
+//SAME TREE
 // Given two binary trees, write a function to check if they are the same or not.
 // Two binary trees are considered the same if they are structurally identical and the nodes have the same value
+
+
+//define a function that takes two parameters 
+//check if root node is same 
+//check if each of their nodes are same . if either of them is null or no match ,return false 
+//run recursive function until one of their node either gets null or no match 
+//return true if first tree's left and right nodes are exactly same as second 
 
 

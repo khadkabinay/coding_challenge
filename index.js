@@ -75,7 +75,7 @@ function kangaroo(x1, v1, x2, v2) {
 
 console.log(kangaroo(2, 1, 3,4))
 
-//  SUPPER REDUCED STRING
+// 3. SUPPER REDUCED STRING
 // reduce the string to it shortest length by doing a series of operations
 // a pair of adjacent that matched will be deleted
 // if all adjacent are matched ,print empty string
@@ -104,7 +104,7 @@ function superReducedString(s) {
 
 superReducedString('aabbc')
 
-// SEARCH ALGORITHMS
+//4. SEARCH ALGORITHMS
 // 1. Ice Cream Parlor
 // Sunny and johnny like to pool their money and go to the ice cream parlor
 // Johnny never buys the same flavor
@@ -121,7 +121,8 @@ superReducedString('aabbc')
 
 
 
-//2. palindrome 
+
+//5. palindrome 
 // check if number is less than 0
 // convert number to string and to array for reverse method 
 // after reverse join and converts that to number 
@@ -147,7 +148,7 @@ isPalindrome(121)
 
 
 
-//// VALID PARENTHESIS
+//6. VALID PARENTHESIS
 // create an empty array 
 // create an two object to seperate opening and closing brackets, parenthesis,curly bracket
 // check if opening value is exist 
@@ -185,7 +186,7 @@ console.log(isValid("()[]{}"))
 
 
 
-//DIVIDE AND CONQUER PATTERN EXAMPLE 
+//7.DIVIDE AND CONQUER PATTERN EXAMPLE 
 // find the position of a number in given array . 
 // take two parameters a number  and an array 
 // return index of the number
@@ -226,7 +227,27 @@ const findPosition = (arr, num) => {
 findPosition([1,2,3,4,5], 3)
 
 
-//SAME TREE
+
+//8.Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. 
+
+const twoSum = (nums, target) => {
+        const obj = new Map()
+        for(let i = 0; i < nums.length;  i++){
+        if(obj.has(target - nums[i])){
+            return [obj.get(target - nums[i]), i]
+        }
+        obj.set(nums[i], i)
+        }
+
+    return []
+    }
+
+
+    console.log(twoSum([3,2,4],6))
+
+
+
+//9.SAME TREE
 // Given two binary trees, write a function to check if they are the same or not.
 // Two binary trees are considered the same if they are structurally identical and the nodes have the same value
 

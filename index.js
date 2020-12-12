@@ -1,3 +1,4 @@
+//QUETIONS FROM LEETCODE AND HACKERRANK
 // INSERTION SORT PART2
 function insertionSort2(arr) {
     for(let i = 1; i < arr.length; i++){
@@ -246,8 +247,27 @@ const twoSum = (nums, target) => {
     console.log(twoSum([3,2,4],6))
 
 
+//9.You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
 
-//9.SAME TREE
+
+const  maximumWealth = function(accounts) {
+        let total = []
+        let count = 0
+        while(count !== accounts.length){
+        let totalCount = 0 
+            for(let i = 0; i < accounts[count].length; i++){
+                    totalCount += accounts[count][i]
+            }
+            total.push(totalCount) 
+            count++
+            }
+        return Math.max(...total)   
+    };
+
+maximumWealth([[1,2,3], [3,4,5]])
+
+
+//SAME TREE
 // Given two binary trees, write a function to check if they are the same or not.
 // Two binary trees are considered the same if they are structurally identical and the nodes have the same value
 

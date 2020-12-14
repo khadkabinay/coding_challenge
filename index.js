@@ -266,6 +266,28 @@ const  maximumWealth = function(accounts) {
 
 maximumWealth([[1,2,3], [3,4,5]])
 
+// 10 Given a string s and a string t, check if s is subsequence of t.
+// "ace" is a subsequesnce of "abcde" while "aec" is not .
+
+const isSubsequence = (s , t) => {
+    if(s.length === 0) return true
+    if(s.length > t.length) return false
+    let index = t.indexOf(s[0])
+    if(index === -1) return false
+
+    return isSubsequence(s.slice(1), t.slice(index + 1))
+}
+
+
+isSubsequence('ace' ,'abcde')
+
+
+
+
+
+
+
+
 
 //SAME TREE
 // Given two binary trees, write a function to check if they are the same or not.

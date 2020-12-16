@@ -273,7 +273,9 @@ const isSubsequence = (s , t) => {
     return isSubsequence(s.slice(1), t.slice(index + 1))
 }
 
-isSubsequence('ace' ,'abcde')
+// isSubsequence('ace', 'abcde')
+isSubsequence('aceee', 'abcde')
+
 
 
 

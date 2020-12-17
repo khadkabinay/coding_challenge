@@ -273,14 +273,15 @@ const isSubsequence = (s , t) => {
     return isSubsequence(s.slice(1), t.slice(index + 1))
 }
 
-// isSubsequence('ace', 'abcde')
+//isSubsequence('ace', 'abcde')
 isSubsequence('aceee', 'abcde')
 
 
+//BINARY TREES 
+//1.Merge Two Binary Trees
 
 
-
-//SAME TREE
+//2.same tree
 // Given two binary trees, write a function to check if they are the same or not.
 // Two binary trees are considered the same if they are structurally identical and the nodes have the same value
 

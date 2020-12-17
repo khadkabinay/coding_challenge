@@ -1,3 +1,5 @@
+//QUETIONS FROM LEETCODE AND HACKERRANK
+
 // INSERTION SORT PART2
 function insertionSort2(arr) {
     for(let i = 1; i < arr.length; i++){
@@ -40,7 +42,8 @@ function fib(n , prevVal = []){
 // 1.  grading
 // If the difference between the grade and the next multiple of 5 is less than 3, round  up to the next multiple of 5 .
 //If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade.
-// return array of new value 
+// return array of new value
+
 function gradingStudents(grades) {
     return grades.map( grade => {
         let numDiff = 5 - ( grade % 5);
@@ -60,6 +63,7 @@ function gradingStudents(grades) {
 // start line or jump distance might be different
 // kangoroos1 has a start line x1 = 1 , jump distance v1= 2 and kangoroos2 has x2 = 2 and jump distance  v1 = 1 ,print "Yes"
 // if they never meet at the same location(same number) , print "No"
+
 function kangaroo(x1, v1, x2, v2) {
     if(x1 < x2 && v1 < v2){
         return "No"
@@ -129,7 +133,6 @@ superReducedString('aabbc')
 // check if  reversed number and number is same 
 // return true if they match otherwise return false 
 
-
 const  isPalindrome = function(x) {
     if(x < 0){
         return false
@@ -154,7 +157,6 @@ isPalindrome(121)
 // check if opening value is exist 
 // compare closing value is matched to opening one .If not, return false
 // if array is empty after compared , then return true , otherwise , return false . 
-
 
 const isValid = function(s) {
     let stack = []
@@ -201,9 +203,6 @@ console.log(isValid("()[]{}"))
 //if condition does not fall into previous if checks then , return middle value
 //if none of conditions are met , just return - 1 
 
-
-
-
 const findPosition = (arr, num) => {
     let start = 0; 
     let end = arr.length - 1 
@@ -229,7 +228,6 @@ findPosition([1,2,3,4,5], 3)
 
 
 //8.Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. 
-
 const twoSum = (nums, target) => {
         const obj = new Map()
         for(let i = 0; i < nums.length;  i++){
@@ -246,8 +244,71 @@ const twoSum = (nums, target) => {
     console.log(twoSum([3,2,4],6))
 
 
+//9.You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
+const  maximumWealth = function(accounts) {
+        let total = []
+        let count = 0
+        while(count !== accounts.length){
+        let totalCount = 0 
+            for(let i = 0; i < accounts[count].length; i++){
+                    totalCount += accounts[count][i]
+            }
+            total.push(totalCount) 
+            count++
+            }
+        return Math.max(...total)   
+    };
 
-//9.SAME TREE
+maximumWealth([[1,2,3], [3,4,5]])
+
+
+// 10 Given a string s and a string t, check if s is subsequence of t.
+// "ace" is a subsequesnce of "abcde" while "aec" is not .
+const isSubsequence = (s , t) => {
+    if(s.length === 0) return true
+    if(s.length > t.length) return false
+    let index = t.indexOf(s[0])
+    if(index === -1) return false
+
+    return isSubsequence(s.slice(1), t.slice(index + 1))
+}
+
+//isSubsequence('ace', 'abcde')
+isSubsequence('aceee', 'abcde')
+
+
+//BINARY TREES 
+//1.Merge Two Binary Trees
+
+function TreeNode(val, left, right){
+        this.val = (val===undefined ? 0 : val)
+        this.left = (left===undefined ? null : left)
+        this.right = (right===undefined ? null : right)
+    }
+
+
+function mergeTrees(t1, t2) {
+        if(!t1){
+            return t2
+        }
+        if(!t2){
+        return t1
+        }
+
+        t1.val += t2.val
+        t1.left = mergeTrees(t1.left, t2.left)
+        t1.right = mergeTrees(t1.right, t2.right)
+
+        return t1
+        
+    
+}
+
+
+
+
+
+//2.same tree
 // Given two binary trees, write a function to check if they are the same or not.
 // Two binary trees are considered the same if they are structurally identical and the nodes have the same value
 

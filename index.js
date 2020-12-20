@@ -298,6 +298,21 @@ const maximum69Number  = (num) =>  {
 
 console.log(maximum69Number(6699))
 
+//11. Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+// Return the running sum of nums.
+
+const  runningSum = function(nums) {
+        let  totalValue = 0
+        let sumNums  = nums.map(elm => {
+        return  totalValue += elm 
+
+        }) 
+
+
+    return sumNums
+    
+}
+
 
 
 

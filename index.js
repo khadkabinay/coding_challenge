@@ -277,17 +277,77 @@ isSubsequence('ace', 'abcde')
 // isSubsequence('aceee', 'abcde')
 
 
+//11. Given a positive integer num consisting only of digits 6 and 9.
+// Return the maximum number you can get by changing at most one digit (6 becomes 9, and 9 becomes 6).
 
 
-//2.same tree
-// Given two binary trees, write a function to check if they are the same or not.
-// Two binary trees are considered the same if they are structurally identical and the nodes have the same value
+const maximum69Number  = (num) =>  {
+    let str = num.toString()
+
+        for(let i = 0; i < str.length; i++){
+            if(str[i] === '6'){
+            return parseInt(str.replace(str[i], '9'))
+        }
+            
+        
+        
+    }
+    return parseInt(str) 
+
+};
+
+console.log(maximum69Number(6699))
+
+//11. Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+// Return the running sum of nums.
+
+const  runningSum = function(nums) {
+        let  totalValue = 0
+        let sumNums  = nums.map(elm => {
+        return  totalValue += elm 
+
+        }) 
 
 
-//define a function that takes two parameters 
-//check if root node is same 
-//check if each of their nodes are same . if either of them is null or no match ,return false 
-//run recursive function until one of their node either gets null or no match 
-//return true if first tree's left and right nodes are exactly same as second 
+    return sumNums
+    
+}
+
+//12.Goal Parser Interpretation 
+//You own a Goal Parser that can interpret a string command. The command consists of an alphabet of "G", "()" and/or "(al)" in some order. The Goal Parser will interpret "G" as the string "G", "()" as the string "o", and "(al)" as the string "al". The interpreted strings are then concatenated in the original order.
+
+
+const interpret = function(command) {
+    //define a variable that holds result
+    //iterate over string
+    //check if current value and next value matched with "()" , if Yes, replace with o
+    //otherwise ,add rest of string to the result
+    // returns that result
+    
+    let result = ''
+    for(let i = 0; i < command.length; i++){
+        let firstChar  = command.charAt(i)
+        let nextChar   = command.charAt(i + 1)
+        
+        if(firstChar ===  "(" && nextChar  === ")" ){
+            result += 'o'
+            i += 1
+        }else{
+            if(firstChar != "(" && firstChar != ")" ){
+            result += firstChar
+            }
+        }
+        
+        
+    }
+    
+    return result
+    
+
+};
+
+interpret('G()()(al)')
+
+
 
 

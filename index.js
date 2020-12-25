@@ -322,7 +322,7 @@ const interpret = function(command) {
     //iterate over string
     //check if current value and next value matched with "()" , if Yes, replace with o
     //otherwise ,add rest of string to the result
-    // returns that result
+    //returns that result
     
     let result = ''
     for(let i = 0; i < command.length; i++){
@@ -351,3 +351,17 @@ interpret('G()()(al)')
 
 
 
+//13. Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
+// Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+const shuffle = function(nums, n) {
+    let newNums = []
+    for(let i = 0; i < n; i++ ){
+        newNums.push(nums[i])
+        newNums.push(nums[i + n])
+    }
+    return newNums
+    
+    
+    
+};
+shuffle([1,2,3,4,4,3,2,1],4)

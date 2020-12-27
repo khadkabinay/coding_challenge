@@ -367,6 +367,25 @@ const shuffle = function(nums, n) {
 shuffle([1,2,3,4,4,3,2,1],4)
 
 
-//Dynamic programming questions
+//14.Missing Number
+//Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
 
+const  missingNumber = function(nums) {
+    let numsLen = nums.length
+    let totalNum = 0
+    
+    for(let i = 0; i <= numsLen; i++){
+        totalNum += i
+    }
+
+    for(let j = 0; j < numsLen; j++){
+        totalNum -= nums[j]
+    }
+    
+    return totalNum
+    
+};
+
+
+missingNumber([3,0,1])
 

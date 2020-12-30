@@ -389,3 +389,22 @@ const  missingNumber = function(nums) {
 
 missingNumber([3,0,1])
 
+
+//15. Add Digits 
+//Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
+const  addDigits = function(num) {
+    while(num.toString().length >= 2){
+        
+    let total = 0
+    for( let digit of num.toString()){
+    total += Number(digit)
+    }
+        
+        num = total
+    }
+    
+    return num
+
+};
+
+addDigits(38)

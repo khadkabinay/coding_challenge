@@ -1,4 +1,6 @@
 //QUETIONS FROM LEETCODE AND HACKERRANK
+//Sources Ref:https://leetcode.com
+
 
 // INSERTION SORT PART2
 function insertionSort2(arr) {
@@ -9,7 +11,6 @@ function insertionSort2(arr) {
             arr[j + 1] = arr[j]
             j--
         }
-        //increments j because the value we need here is j + 1
         j++
         arr[j] = temp
     }
@@ -441,3 +442,34 @@ for(let i = 0 ; i < nums.length; i++){
 return newArr
 
 };
+
+
+smallerNumbersThanCurrent(8,4,2,5)
+
+//17.Decompress Run-Length Encoded List 
+//Consider each adjacent pair of elements [freq, val] = [nums[2*i], nums[2*i+1]] (with i >= 0).  For each such pair, there are freq elements with value val concatenated in a sublist. Concatenate all the sublists from left to right to generate the decompressed list.
+//Return the decompressed list.
+
+const decompressedRLElist  = function(nums){
+    let newArr = []
+    let freq  = 0
+    let val = 0
+
+    for(let i = 0;  i < nums.length; i+=2){
+        freq = nums[i]
+        val = nums[i + 1]
+        let resultArr = new Array(freq).fill(val)
+        newArr = newArr.concat(resultArr)
+
+    }
+
+    return newArr
+
+
+}
+
+
+
+decompressedRLElist([1,2,3,4])
+
+

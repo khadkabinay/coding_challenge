@@ -1,4 +1,6 @@
 //QUETIONS FROM LEETCODE AND HACKERRANK
+//Sources Ref:https://leetcode.com
+
 
 // INSERTION SORT PART2
 function insertionSort2(arr) {
@@ -9,7 +11,6 @@ function insertionSort2(arr) {
             arr[j + 1] = arr[j]
             j--
         }
-        //increments j because the value we need here is j + 1
         j++
         arr[j] = temp
     }
@@ -388,4 +389,109 @@ const  missingNumber = function(nums) {
 
 
 missingNumber([3,0,1])
+
+
+//15. Add Digits 
+//Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
+const  addDigits = function(num) {
+    while(num.toString().length >= 2){
+        
+    let total = 0
+    for( let digit of num.toString()){
+    total += Number(digit)
+    }
+        
+        num = total
+    }
+    
+    return num
+
+};
+
+addDigits(38)
+
+
+//16. How Many Numbers Are Smaller Than the Current Number
+//Given the array nums, for each nums[i] find out how many numbers in the array are smaller than it. That is, for each nums[i] you have to count the number of valid j's such that j != i and nums[j] < nums[i].Return the answer in an array.
+
+const smallerNumbersThanCurrent = function(nums) {
+    let newArr = []
+    let count   = 0; 
+for(let i = 0 ; i < nums.length; i++){
+        for(let j = 0; j < nums.length; j++){
+            if(nums[i] > nums[j]){
+
+            count += 1
+                
+            }else{
+            continue
+            }
+            
+        }
+    if(count > 0){
+    newArr.push(count)
+    }else{
+    newArr.push(0)
+    }
+    
+    count = 0 
+    
+    
+}
+
+return newArr
+
+};
+
+
+smallerNumbersThanCurrent(8,4,2,5)
+
+//17.Decompress Run-Length Encoded List 
+//Consider each adjacent pair of elements [freq, val] = [nums[2*i], nums[2*i+1]] (with i >= 0).  For each such pair, there are freq elements with value val concatenated in a sublist. Concatenate all the sublists from left to right to generate the decompressed list.
+//Return the decompressed list.
+
+const decompressedRLElist  = function(nums){
+    let newArr = []
+    let freq  = 0
+    let val = 0
+
+    for(let i = 0;  i < nums.length; i+=2){
+        freq = nums[i]
+        val = nums[i + 1]
+        let resultArr = new Array(freq).fill(val)
+        newArr = newArr.concat(resultArr)
+
+    }
+
+    return newArr
+
+
+}
+
+
+
+decompressedRLElist([1,2,3,4])
+
+//18. Create Target Array in the Given Order
+// Given two arrays of integers nums and index. Your task is to create target array under the following rules:
+
+//Initially target array is empty.
+//From left to right read nums[i] and index[i], insert at index index[i] the value nums[i] in target array.
+//Repeat the previous step until there are no elements to read in nums and index.
+//Return the target array.
+
+//It is guaranteed that the insertion operations will be valid.
+
+
+const createTargetArray = function(nums, index) {
+    let targetArr  = []
+    
+    for(let i = 0; i < index.length; i++){
+        targetArr.splice(index[i] , 0, nums[i])
+    }
+
+    return targetArr  
+}
+
+createTargetArray([0,1,2,3,4], [0,1,2,2,1])
 

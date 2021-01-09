@@ -496,7 +496,7 @@ const createTargetArray = function(nums, index) {
 createTargetArray([0,1,2,3,4], [0,1,2,2,1])
 
 
-// Given an integer n and an integer start.
+//19. Given an integer n and an integer start.
 // Define an array nums where nums[i] = start + 2*i (0-indexed) and n == nums.length.
 // Return the bitwise XOR of all elements of nums.
 
@@ -510,3 +510,28 @@ const xorOperation = function(n, start) {
 
 
 xorOperation(4,2)
+
+// 20.Given an array of positive integers arr, calculate the sum of all possible odd-length subarrays.
+//A subarray is a contiguous subsequence of the array.//Return the sum of all odd-length subarrays of arr.
+
+const sumOddLengthSubarrays = function(arr) {
+    let subArrLen = 1
+    let result = 0
+    
+    while(subArrLen <= arr.length){
+        
+        for(let i = 0 ; i < arr.length; i++){
+            if(arr.length - subArrLen  >= i){
+                result += arr.slice(i, i + subArrLen).reduce((acc, cur) => (acc + cur), 0)
+                
+            }
+        }
+        subArrLen += 2
+        
+    }
+    
+    return result
+    
+};
+
+sumOddLengthSubarrays([1,4,2,5,3])

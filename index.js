@@ -548,3 +548,19 @@ const climbStairs = function(n, memo = {1:1, 2:2}) {
 
 
  climbStairs(30)
+
+
+ //22. Find Numbers with Even Number of Digits 
+ //Given an Array Numbs of integers, return how many of them contain an even number of digits
+
+const  findNumbers = function(nums) {
+    let count = 0
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i].toString().length % 2 === 0){
+            count++
+        }
+    }
+    return count
+};
+
+findNumbers([12,345,2,6,3456])

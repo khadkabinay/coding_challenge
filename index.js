@@ -564,3 +564,31 @@ const  findNumbers = function(nums) {
 };
 
 findNumbers([12,345,2,6,3456])
+
+
+
+//23. Self Dividing Numbers
+//Given a lower and upper number bound , output a list of every possible self dividing number , including the bounds if possible 
+
+const selfDividingNumbers = function(left, right) {
+    let arr = [] 
+    for(let i = left; i <= right; i++){
+    let isDivide = true
+    let  digit = i.toString().split('').map(num => num)
+    
+        for(let j = 0 ; j < digit.length; j++){
+            
+            if(i % parseInt(digit[j]) !== 0){
+                isDivide  = false
+            }
+        }
+    
+        if(isDivide){
+            arr.push(i)
+        }
+    }
+    return arr
+    
+};
+
+selfDividingNumbers(1,22)

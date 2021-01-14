@@ -592,3 +592,18 @@ const selfDividingNumbers = function(left, right) {
 };
 
 selfDividingNumbers(1,22)
+
+//24. Maximum Product of Two Elements in an Array 
+// given the array of intergers nums , You will choose two different indice i and j of that array . Return the maximum value of (nums[i] - 1 * nums[j] - 1
+
+const maxProduct = function(nums) {
+        let max1 = Math.max(...nums)
+        nums.splice(nums.indexOf(max1) , 1)
+        let max2 = Math.max(...nums)
+        return (max1 - 1) * (max2 - 1)
+
+        
+};
+
+
+maxProduct([3,4,5,2])

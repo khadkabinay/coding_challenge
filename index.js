@@ -548,3 +548,62 @@ const climbStairs = function(n, memo = {1:1, 2:2}) {
 
 
  climbStairs(30)
+
+
+ //22. Find Numbers with Even Number of Digits 
+ //Given an Array Numbs of integers, return how many of them contain an even number of digits
+
+const  findNumbers = function(nums) {
+    let count = 0
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i].toString().length % 2 === 0){
+            count++
+        }
+    }
+    return count
+};
+
+findNumbers([12,345,2,6,3456])
+
+
+
+//23. Self Dividing Numbers
+//Given a lower and upper number bound , output a list of every possible self dividing number , including the bounds if possible 
+
+const selfDividingNumbers = function(left, right) {
+    let arr = [] 
+    for(let i = left; i <= right; i++){
+    let isDivide = true
+    let  digit = i.toString().split('').map(num => num)
+    
+        for(let j = 0 ; j < digit.length; j++){
+            
+            if(i % parseInt(digit[j]) !== 0){
+                isDivide  = false
+            }
+        }
+    
+        if(isDivide){
+            arr.push(i)
+        }
+    }
+    return arr
+    
+};
+
+selfDividingNumbers(1,22)
+
+//24. Maximum Product of Two Elements in an Array 
+// given the array of intergers nums , You will choose two different indice i and j of that array . Return the maximum value of (nums[i] - 1 * nums[j] - 1
+
+const maxProduct = function(nums) {
+        let max1 = Math.max(...nums)
+        nums.splice(nums.indexOf(max1) , 1)
+        let max2 = Math.max(...nums)
+        return (max1 - 1) * (max2 - 1)
+
+        
+};
+
+
+maxProduct([3,4,5,2])

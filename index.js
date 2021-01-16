@@ -629,3 +629,17 @@ const heightChecker = function(heights){
     return count 
     
 }
+
+
+//Capitalize the first letter of words 
+
+function capitalizewords(array){
+    let newArr = []
+    for(let str of array){
+        newArr.push(str[0].toUpperCase() + str.slice(1) )
+
+    }
+    return newArr
+}
+
+console.log(capitalizewords(['hello', 'bye']))

@@ -662,3 +662,32 @@ const  arrayStringsAreEqual = function(word1, word2) {
 };
 
 arrayStringsAreEqual(['ab', 'c'], ['a', 'bc'])
+
+// 28. Maximum Nesting Depth of the Parentheses
+// Input: s = "(1+(2*3)+((8)/4))+1"
+// Output: 3
+
+const maxDepth = function(s) {
+    let count = 0;
+    let stack = []
+    
+    for(let i = 0; i < s.length; i++){
+        
+        if(s[i] === "("){
+            stack.push("(")
+        }
+        
+        if(count < stack.length){
+            count = stack.length
+        }
+        if(s[i]  === ")"){
+            stack.pop(")")
+        }
+        
+    }
+    
+    return count 
+    
+};
+
+maxDepth("(1+(2*3)+((8)/4))+1")

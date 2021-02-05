@@ -715,4 +715,7 @@ const minCostToMoveChips = function(position) {
     
 };
 
+
 minCostToMoveChips([3,3,2,2,2])
+
+

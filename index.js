@@ -693,7 +693,7 @@ const maxDepth = function(s) {
 maxDepth("(1+(2*3)+((8)/4))+1")
 
 
-//. Minimum cost to move chips to the same position 
+//.29 Minimum cost to move chips to the same position 
 // Input: position = [2,2,2,3,3]
 // Output: 2
 // Explanation: We can move the two chips at position 3 to positon 2. Each move has cost = 1.The total cost = 2
@@ -719,3 +719,4 @@ const minCostToMoveChips = function(position) {
 minCostToMoveChips([3,3,2,2,2])
 
 
+//30. 

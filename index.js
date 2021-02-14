@@ -719,4 +719,33 @@ const minCostToMoveChips = function(position) {
 minCostToMoveChips([3,3,2,2,2])
 
 
-//30. 
+//30.Longest Substring Without Repeating Characters
+// Input: s = "abcabcbb"
+// Output: 3
+// Explanation: The answer is "abc", with the length of 3.
+
+var lengthOfLongestSubstring = function(s) {
+  
+     let set = new Set()
+     let left = 0
+     let right = 0
+     let maxLen = 0
+     
+     while(right < s.length){
+         
+        if(!set.has(s.charAt(right))){
+           set.add(s.charAt(right))
+            maxLen = Math.max(maxLen , set.size)
+            right++
+        }else{
+            set.delete(s.charAt(left))
+            left++
+        }
+     }
+   
+    return maxLen
+
+    
+};
+
+lengthOfLongestSubstring('abcaabcd')

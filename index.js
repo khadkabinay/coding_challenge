@@ -691,3 +691,104 @@ const maxDepth = function(s) {
 };
 
 maxDepth("(1+(2*3)+((8)/4))+1")
+
+
+//.29 Minimum cost to move chips to the same position 
+// Input: position = [2,2,2,3,3]
+// Output: 2
+// Explanation: We can move the two chips at position 3 to positon 2. Each move has cost = 1.The total cost = 2
+
+
+const minCostToMoveChips = function(position) {
+    let even = 0
+    let odd = 0
+    
+    for(let i = 0 ; i < position.length; i++){
+        if(position[i] % 2 === 0){
+            even++
+        }else {
+            odd++
+        }
+    }
+    
+    return Math.min(even, odd)
+    
+};
+
+
+minCostToMoveChips([3,3,2,2,2])
+
+
+//30.Longest Substring Without Repeating Characters
+// Input: s = "abcabcbb"
+// Output: 3
+// Explanation: The answer is "abc", with the length of 3.
+
+var lengthOfLongestSubstring = function(s) {
+  
+     let set = new Set()
+     let left = 0
+     let right = 0
+     let maxLen = 0
+     
+     while(right < s.length){
+         
+        if(!set.has(s.charAt(right))){
+           set.add(s.charAt(right))
+            maxLen = Math.max(maxLen , set.size)
+            right++
+        }else{
+            set.delete(s.charAt(left))
+            left++
+        }
+     }
+   
+    return maxLen
+
+    
+};
+
+lengthOfLongestSubstring('abcaabcd')
+
+
+// 31. Sliding Window  - minSubArrayLen
+// write a function called minSubArrayLen which accepts two parameters - an array of positive integers and a positive integer.
+// this function show return the minimal length of a contiguous subarray of which the sum is greater than or equal to the integer passed to the function . If there is not one , return 0 instead.
+
+function minSubArrayLen(arr, num){
+ 
+    let start = 0;
+    let end = 0;
+    let minLen = Infinity;
+    let total = 0;
+    
+    while(start < arr.length){
+      
+       if(total < num && end < arr.length ){
+           total += arr[end]
+           end++
+       }else if (total >= num){
+          minLen = Math.min(minLen, end - start)
+          total -= arr[start]
+          start++
+          
+       }else{
+           break;
+       }
+       
+       
+        
+    }
+    
+    
+    return minLen === Infinity ? 0 : minLen;
+     
+     
+  }
+
+  minSubArrayLen([1,3,4,5,6], 11)//return 2
+
+
+
+
+
